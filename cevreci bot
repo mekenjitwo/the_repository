@@ -19,11 +19,25 @@ async def hello(ctx):
     await ctx.send(f'Merhaba! Ben size çevre konusunda yardımcı olacak bir botum.')
 
 @bot.command()
-async def cevre_bilgi(ctx):
+async def oneri(ctx):
+
     await ctx.send(random.choice(oneriler))
 
 @bot.command()
 async def imza_kampanyalari(ctx):
     await ctx.send(random.choice(imza_kampanya))
+
+@bot.command()
+async def bye(ctx):
+    await ctx.send(f'Görüşürüz!')
+
+@bot.command()
+async def yardim(ctx):
+    yardim_mesaji="""$hello - Size selam verir.
+$bye - Sizi yollar.
+$on_ready - Bot girişini yazar.
+$oneri - Size çevre ile ilgili öneriler verir.
+$imza_kampanyalari - Size çevre ile ilgili imza kampanyaları verir."""
+    await ctx.send(yardim_mesaji)
 
 bot.run(PUT YOUR TOKEN HERE)
